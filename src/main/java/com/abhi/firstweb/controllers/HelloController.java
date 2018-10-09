@@ -32,4 +32,10 @@ public class HelloController {
 	public String getversion() {
 		return "0.0.1";
 	}
+	
+	@RequestMapping(value="/newversion", method= RequestMethod.GET)
+	@ResponseBody
+	public String getNewVersion() {
+		return "0.0.2";
+	}
 }
