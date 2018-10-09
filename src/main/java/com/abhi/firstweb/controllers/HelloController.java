@@ -26,6 +26,7 @@ public class HelloController {
 		model.put("name", "Abhishek kumar Tiwari");
 		return new ModelAndView("home", model);
 	}
+	
 	@RequestMapping(value="/version", method= RequestMethod.GET)
 	@ResponseBody
 	public String getversion() {
