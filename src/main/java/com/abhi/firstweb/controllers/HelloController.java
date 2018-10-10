@@ -4,10 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.abhi.firstweb.model.User;
 
 @Controller
 public class HelloController {
@@ -37,5 +40,12 @@ public class HelloController {
 	@ResponseBody
 	public String getNewVersion() {
 		return "0.0.2";
+	}
+	
+	@RequestMapping(value="/register", method=RequestMethod.POST)
+	@ResponseBody
+	public String registerUser(@RequestBody User user) {
+		System.out.println(user.toString());
+		return user.getUserid();
 	}
 }
